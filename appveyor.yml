@@ -4,8 +4,7 @@ build:
 clone_depth: 30
 
 build_script :
- - C:\MinGW\bin\mingw-get install libgmpxx
- - '%BASH_PATH% -lc "cd $APPVEYOR_BUILD_FOLDER; ./build_spot.sh && mv website/spot_linux.tar.gz website/spot_windows.tar.gz"'
+ - '%BASH_PATH% -lc "cd $APPVEYOR_BUILD_FOLDER; ./build_louvain.sh && mv website/louvain_linux.tar.gz website/louvain_windows.tar.gz"'
  - DIR
 
  
@@ -15,7 +14,7 @@ environment :
 
  
 artifacts:
-  - path: website/spot_windows.tar.gz
-    name: spot_windows.tar.gz
+  - path: website/louvain_windows.tar.gz
+    name: louvain_windows.tar.gz
 
       

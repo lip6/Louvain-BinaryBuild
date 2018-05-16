@@ -3,6 +3,8 @@
 A project to host binary artifacts for Louvain Community Detection Algorithm. 
 This project builds binaries for linux, Windows and OSX using public providers : [travis-ci](https://travis-ci.org/) and [Appveyor](https://www.appveyor.com/).  
 
+The resulting binaries can be downloaded from this page : [Binary builds](https://lip6.github.io/Louvain-BinaryBuild/)
+
 More details :
 * [Wikipedia : Louvain Modularity](https://en.wikipedia.org/wiki/Louvain_Modularity) 
 * [Website](https://perso.uclouvain.be/vincent.blondel/research/louvain.html)

@@ -2,7 +2,7 @@
 
 set -x
 
-tar zxf louvain-generic.tar.gz
+# tar zxf louvain-generic.tar.gz
 
 cd louvain-generic/
 

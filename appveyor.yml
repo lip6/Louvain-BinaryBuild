@@ -1,0 +1,21 @@
+build:
+  verbosity: minimal
+
+clone_depth: 30
+
+build_script :
+ - C:\MinGW\bin\mingw-get install libgmpxx
+ - '%BASH_PATH% -lc "cd $APPVEYOR_BUILD_FOLDER; ./build_spot.sh && mv website/spot_linux.tar.gz website/spot_windows.tar.gz"'
+ - DIR
+
+ 
+environment :
+ MSYSTEM: MINGW64 
+ BASH_PATH: C:\msys64\usr\bin\bash
+
+ 
+artifacts:
+  - path: website/spot_windows.tar.gz
+    name: spot_windows.tar.gz
+
+      

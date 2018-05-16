@@ -4,8 +4,7 @@ build:
 clone_depth: 30
 
 build_script :
- - '%BASH_PATH% -lc "cd $APPVEYOR_BUILD_FOLDER; ./build_louvain.sh && mv website/louvain_linux.tar.gz website/louvain_windows.tar.gz"'
- - ren C:\projects\louvain-binarybuild\website\louvain C:\projects\louvain-binarybuild\website\louvain.exe
+ - '%BASH_PATH% -lc "cd $APPVEYOR_BUILD_FOLDER; ./build_louvain.sh && mv website/louvain_linux.tar.gz website/louvain_windows.tar.gz && ls -lah website/ && mv -f website/louvain website/louvain.exe"'
  - DIR
 
  

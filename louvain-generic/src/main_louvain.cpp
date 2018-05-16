@@ -33,7 +33,7 @@
 
 #include "graph_binary.h"
 #include "louvain.h"
-#include <unistd.h>
+#include <ctime>
 
 #include "modularity.h"
 #include "zahn.h"

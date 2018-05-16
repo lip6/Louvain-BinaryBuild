@@ -11,7 +11,7 @@ More details :
 * [Newer Website](https://sites.google.com/site/findcommunities/)
 * [Source Repository : sourceforge](http://sourceforge.net/projects/louvain/)
 
-The project is based on "louvain-generic.ar.gz" release dated 2015-07-06 on [sourceforge](http://sourceforge.net/projects/louvain/).
+The project is based on "louvain-generic.tar.gz" release dated 2015-07-06 on [sourceforge](http://sourceforge.net/projects/louvain/).
 
 Authors :  Vincent Blondel, Jean-Loup Guillaume, Renaud Lambiotte, and Etienne Lefebvre.
 

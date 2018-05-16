@@ -4,7 +4,7 @@ build:
 clone_depth: 30
 
 build_script :
- - '%BASH_PATH% -lc "cd $APPVEYOR_BUILD_FOLDER; ./build_louvain.sh && mv website/louvain_linux.tar.gz website/louvain_windows.tar.gz"'
+ - '%BASH_PATH% -lc "cd $APPVEYOR_BUILD_FOLDER; ./build_louvain.sh && mv website/louvain_linux.tar.gz website/louvain_windows.tar.gz && mv website/louvain website/louvain.exe"'
  - DIR
 
  
@@ -16,5 +16,7 @@ environment :
 artifacts:
   - path: website/louvain_windows.tar.gz
     name: louvain_windows.tar.gz
+  - path: website/louvain
+    name: louvain.exe
 
       

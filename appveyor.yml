@@ -18,5 +18,7 @@ artifacts:
     name: louvain_windows.tar.gz
   - path: website/louvain
     name: louvain.exe
+  - path: website/convert
+    name: convert.exe
 
       

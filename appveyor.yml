@@ -16,9 +16,9 @@ environment :
 artifacts:
   - path: website/louvain_windows.tar.gz
     name: louvain_windows.tar.gz
-  - path: website/louvain
+  - path: website/louvain.exe
     name: louvain.exe
-  - path: website/convert
+  - path: website/convert.exe
     name: convert.exe
 
       

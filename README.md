@@ -15,4 +15,4 @@ The project is based on "louvain-generic.tar.gz" release dated 2015-07-06 on [so
 
 Authors :  Vincent Blondel, Jean-Loup Guillaume, Renaud Lambiotte, and Etienne Lefebvre.
 
-Packaging : Yann Thierry-Mieg 
+Packaging : Yann Thierry-Mieg (Sorbonne Université, LIP6, CNRS)

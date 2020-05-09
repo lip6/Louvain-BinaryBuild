@@ -2,6 +2,7 @@
 
 CXX=g++
 CXXFLAGS= -ansi -O5 -Wall
+LDFLAGS= -static-libgcc -static-libstdc++
 DIRSRC= ./src/
 EXEC=louvain convert hierarchy matrix
 OBJ1= $(DIRSRC)graph_binary.o $(DIRSRC)louvain.o $(DIRSRC)quality.o $(DIRSRC)modularity.o $(DIRSRC)zahn.o $(DIRSRC)owzad.o $(DIRSRC)goldberg.o $(DIRSRC)condora.o $(DIRSRC)devind.o $(DIRSRC)devuni.o $(DIRSRC)dp.o $(DIRSRC)shimalik.o $(DIRSRC)balmod.o
@@ -10,16 +11,16 @@ OBJ2= $(DIRSRC)graph.o
 all: $(EXEC)
 
 louvain : $(OBJ1) $(DIRSRC)main_louvain.o
-	$(CXX) -o $@ $^ $(CXXFLAGS)
+	$(CXX) -o $@ $^ $(CXXFLAGS) $(LDFLAGS)
 
 convert : $(OBJ2) $(DIRSRC)main_convert.o
-	$(CXX) -o $@ $^ $(CXXFLAGS)
+	$(CXX) -o $@ $^ $(CXXFLAGS) $(LDFLAGS)
 
 hierarchy : $(DIRSRC)main_hierarchy.o
-	$(CXX) -o $@ $^ $(CXXFLAGS)
+	$(CXX) -o $@ $^ $(CXXFLAGS) $(LDFLAGS)
 
 matrix : $(DIRSRC)main_matrix.o
-	$(CXX) -o $@ $^ $(CXXFLAGS)
+	$(CXX) -o $@ $^ $(CXXFLAGS) $(LDFLAGS)
 
 ##########################################
 # Generic rules

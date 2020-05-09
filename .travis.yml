@@ -28,6 +28,7 @@ before_script:
   - export CXX=${CXX_COMPILER}
   - export CC=${C_COMPILER}
   - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then export TARGETBRANCH=osx ; fi
+  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then rm louvain-generic/Makefile ; cp louvain-generic/Makefile.osx louvain-generic/Makefile ; fi
   # linux only
   - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then export AR=gcc-ar-${GCCVER} ; fi
   - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then export RANLIB=gcc-ranlib-${GCCVER} ; fi

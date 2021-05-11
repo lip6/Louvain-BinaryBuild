@@ -1,0 +1,28 @@
+name: OSX Build
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build:
+    
+    runs-on: macos-latest
+    
+    steps:
+    - uses: actions/checkout@v2
+    - name: tag version date
+      run: /bin/sh ./tag.sh
+    - name: build
+      run: ./build_louvain.sh
+    - name: rename
+      run: mv website/louvain_linux.tar.gz website/louvain_osx.tar.gz
+    - name: Deploy to GitHub Pages
+      uses: JamesIves/github-pages-deploy-action@3.7.1
+      with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          BRANCH: ${{ runner.os }} # The branch the action should deploy to.
+          FOLDER: website/ # The folder the action should deploy.
+          CLEAN: true # Automatically remove deleted files from the deploy branch   

@@ -15,8 +15,6 @@ jobs:
     - uses: actions/checkout@v2
     - name: configure and make
       run:  C:\msys64\usr\bin\bash -lc "PATH+=:/mingw64/bin ; cd /D/a/Louvain-BinaryBuild/Louvain-BinaryBuild ; ./build_louvain.sh && mv website/louvain_linux.tar.gz website/louvain_windows.tar.gz "
-    - name: package zip
-      run:  C:\msys64\usr\bin\bash -lc "cd /D/a/libDDD/libDDD ; tar -a -c -f windows.zip usr/ ; mv windows.zip website/"
     - name: Upload Artifacts 🔺 # The project is then uploaded as an artifact named 'site'.
       uses: actions/upload-artifact@v1
       with:

@@ -36,7 +36,7 @@ jobs:
         with:
           name: site
       - name: move to website
-        run: ls -lah ; mkdir -p windows ; cp louvain_windows.tar.gz windows/ ; ls -lah windows/
+        run: ls -lah ; mkdir -p windows ; cp site/* windows/ ; ls -lah windows/
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@4.1.3

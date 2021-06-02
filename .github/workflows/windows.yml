@@ -14,12 +14,12 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: configure and make
-      run:  C:\msys64\usr\bin\bash -lc "PATH+=:/mingw64/bin ; cd /D/a/Louvain-BinaryBuild/Louvain-BinaryBuild ; ./build_louvain.sh && mv website/louvain_linux.tar.gz website/louvain_windows.tar.gz "
+      run:  C:\msys64\usr\bin\bash -lc "PATH+=:/mingw64/bin ; cd /D/a/Louvain-BinaryBuild/Louvain-BinaryBuild ; ./build_louvain.sh && mv website/louvain_linux.tar.gz website/louvain_windows.tar.gz && cp -r website/ site/ "
     - name: Upload Artifacts 🔺 # The project is then uploaded as an artifact named 'site'.
       uses: actions/upload-artifact@v1
       with:
         name: site
-        path: website/
+        path: site/
     
   deploy:
     needs: [build] # The second job must depend on the first one to complete before running, and uses ubuntu-latest instead of windows.
@@ -35,12 +35,13 @@ jobs:
         uses: actions/download-artifact@v1
         with:
           name: site
+      - name: move to website
+        run: ls -lah ; mkdir -p windows ; cp louvain_windows.tar.gz windows/ ; ls -lah windows/
 
       - name: Deploy 🚀
-        uses: JamesIves/github-pages-deploy-action@3.7.1
+        uses: JamesIves/github-pages-deploy-action@4.1.3
         with:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-          BRANCH: Windows
-          FOLDER: "site" # The deployment folder should match the name of the artifact. Even though our project builds into the 'build' folder the artifact name of 'site' must be placed here.
-          CLEAN: true # Automatically remove deleted files from the deploy branch 
+          branch: Windows
+          folder: windows/ # The deployment folder should match the name of the artifact. Even though our project builds into the 'build' folder the artifact name of 'site' must be placed here.
+          clean: true # Automatically remove deleted files from the deploy branch
+          single-commit: true 

@@ -12,7 +12,7 @@ jobs:
     runs-on: windows-latest
     
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v2.3.4
     - name: configure and make
       run:  C:\msys64\usr\bin\bash -lc "PATH+=:/mingw64/bin ; cd /D/a/Louvain-BinaryBuild/Louvain-BinaryBuild ; ./build_louvain.sh && mv website/louvain_linux.tar.gz website/louvain_windows.tar.gz && cp -r website/ site/ "
     - name: Upload Artifacts 🔺 # The project is then uploaded as an artifact named 'site'.

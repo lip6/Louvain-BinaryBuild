@@ -19,3 +19,4 @@ Authors :  Vincent Blondel, Jean-Loup Guillaume, Renaud Lambiotte, and Etienne L
 Packaging : Yann Thierry-Mieg (Sorbonne Université, LIP6, CNRS)
 
 Acknowledgements : This project initially used CI providers [travis-ci](https://travis-ci.org/) and [Appveyor](https://www.appveyor.com/).  
+

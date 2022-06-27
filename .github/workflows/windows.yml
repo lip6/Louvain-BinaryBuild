@@ -13,6 +13,8 @@ jobs:
     
     steps:
     - uses: actions/checkout@v3
+    - name: install packages
+      run:  C:\msys64\usr\bin\bash -lc "PATH+=:/mingw64/bin ; pacman --noconfirm -S base-devel gcc p7zip"
     - name: configure and make
       run:  C:\msys64\usr\bin\bash -lc "PATH+=:/mingw64/bin ; cd /D/a/Louvain-BinaryBuild/Louvain-BinaryBuild ; ./build_louvain.sh && mv website/louvain_linux.tar.gz website/louvain_windows.tar.gz && cp -r website/ site/ "
     - name: Upload Artifacts 🔺 # The project is then uploaded as an artifact named 'site'.

@@ -16,11 +16,11 @@ jobs:
     - name: tag version date
       run: /bin/sh ./tag.sh
     - name: Install packages
-      run: brew install gcc autoconf automake libtool binutils ;
+      run: brew install gcc@11 autoconf automake libtool binutils ;
     - name: change Makefile for OSX
       run : rm louvain-generic/Makefile ; cp louvain-generic/Makefile.osx louvain-generic/Makefile
     - name: build
-      run: export AR='gcc-ar-10'; export NM='gcc-nm-10'; export RANLIB='gcc-ranlib-10'; export CXX='g++-10'; export CC='gcc-10' ;  ./build_louvain.sh
+      run: export AR='gcc-ar-11'; export NM='gcc-nm-11'; export RANLIB='gcc-ranlib-11'; export CXX='g++-11'; export CC='gcc-11' ;  ./build_louvain.sh
     - name: rename
       run: mv website/louvain_linux.tar.gz website/louvain_osx.tar.gz
     - name: Deploy to GitHub Pages

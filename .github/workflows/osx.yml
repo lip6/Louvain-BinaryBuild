@@ -24,7 +24,7 @@ jobs:
     - name: rename
       run: mv website/louvain_linux.tar.gz website/louvain_osx.tar.gz
     - name: Deploy to GitHub Pages
-      uses: JamesIves/github-pages-deploy-action@v4.4.3
+      uses: JamesIves/github-pages-deploy-action@v4.5.0
       with:
           branch: osx  # The branch the action should deploy to.
           folder: website/  # The folder the action should deploy.
